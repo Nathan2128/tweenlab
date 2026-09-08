@@ -1,0 +1,106 @@
+.presets {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 12px;
+  padding: 18px 24px 24px;
+}
+.preset {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border-radius: var(--r-l);
+  border: 1px solid var(--line);
+  background: var(--bg-2);
+  overflow: hidden;
+  transition: border-color 0.15s, transform 0.15s var(--ease-out), box-shadow 0.15s;
+}
+.preset:hover {
+  border-color: var(--accent-line);
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px -20px rgba(0, 0, 0, 0.8);
+}
+.preset__stage {
+  height: 96px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px;
+  background-color: var(--bg-0);
+  background-image: radial-gradient(circle at center, var(--line-strong) 0.8px, transparent 1px);
+  background-size: 14px 14px;
+  background-position: center;
+}
+.preset__stage--column {
+  flex-direction: column;
+  gap: 5px;
+}
+.preset__stage--grid {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  gap: 5px;
+}
+.preset__el {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.2) inset;
+}
+.preset__el--circle {
+  border-radius: 50%;
+}
+.preset__el--pill {
+  width: 38px;
+  height: 13px;
+  border-radius: 999px;
+}
+.preset__el--ring {
+  border-radius: 50%;
+  border: 3px solid;
+  box-shadow: none;
+}
+.preset__el--text {
+  width: auto;
+  height: auto;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.03em;
+  box-shadow: none;
+}
+.preset__stage--grid .preset__el {
+  width: 16px;
+  height: 16px;
+}
+.preset__body {
+  padding: 12px 14px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.preset__name {
+  font-weight: 600;
+  font-size: 13.5px;
+}
+.preset__blurb {
+  color: var(--fg-2);
+  font-size: 12px;
+  line-height: 1.45;
+}
+.preset__tags {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+}
+.preset__tags span {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--bg-3);
+  color: var(--fg-2);
+}

@@ -1,0 +1,117 @@
+.insp__target-chips {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+
+.prop {
+  display: grid;
+  grid-template-columns: 92px 1fr 22px;
+  align-items: center;
+  gap: 8px;
+  padding: 5px 0;
+}
+.prop__ctrl {
+  display: grid;
+  grid-template-columns: 1fr 72px;
+  gap: 8px;
+  align-items: center;
+  min-width: 0;
+}
+.prop__ctrl--pair {
+  grid-template-columns: 1fr 14px 1fr;
+}
+.prop__arrow {
+  color: var(--fg-3);
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+.prop__ctrl--single {
+  grid-template-columns: 1fr;
+}
+.prop .iconbtn {
+  opacity: 0;
+}
+.prop:hover .iconbtn,
+.prop:focus-within .iconbtn {
+  opacity: 1;
+}
+.prop__from {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--cyan);
+  text-align: right;
+  padding-right: 2px;
+}
+
+.addprop {
+  margin-top: 6px;
+}
+.addprop select {
+  color: var(--fg-2);
+}
+
+.timing {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px 12px;
+}
+.timing .fieldlabel > span {
+  display: flex;
+  justify-content: space-between;
+}
+.timing .fieldlabel > span b {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  color: var(--fg-1);
+}
+.timing__wide {
+  grid-column: 1 / -1;
+}
+.poschips {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin-top: 6px;
+}
+
+.ease__fams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.ease__curve {
+  position: relative;
+  margin: 10px 0 8px;
+  border-radius: var(--r-m);
+  background: var(--bg-0);
+  border: 1px solid var(--line);
+  overflow: hidden;
+}
+.ease__curve svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.ease__desc {
+  font-size: 11.5px;
+  color: var(--fg-2);
+  line-height: 1.45;
+  min-height: 32px;
+}
+.ease__custom {
+  margin-top: 8px;
+}
+
+.insp__method-hint {
+  margin-top: 8px;
+}
+
+.timing > *,
+.fieldlabel,
+.prop__ctrl > * {
+  min-width: 0;
+}

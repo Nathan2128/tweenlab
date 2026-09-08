@@ -1,0 +1,142 @@
+.app {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-0);
+  position: relative;
+  /* clip, not hidden: tooltips near the edges must never turn the shell into a scroll container */
+  overflow: clip;
+}
+
+/* Atmospheric background: faint amber bloom top-left, cyan bottom-right, grain */
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(900px 500px at -5% -10%, rgba(255, 176, 32, 0.07), transparent 60%),
+    radial-gradient(800px 500px at 105% 110%, rgba(98, 210, 255, 0.05), transparent 60%);
+  z-index: 0;
+}
+
+.app > .topbar,
+.app > .workspace,
+.app > .mobile-nav {
+  position: relative;
+  z-index: 1;
+}
+
+.workspace {
+  flex: 1;
+  min-height: 0;
+  display: grid;
+  grid-template-columns: var(--pane-l) minmax(0, 1fr) var(--pane-r);
+  grid-template-rows: minmax(0, 1fr) auto;
+  gap: 1px;
+  background: var(--line);
+  border-top: 1px solid var(--line);
+}
+
+.pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  background: var(--bg-1);
+}
+.pane--stage {
+  background: var(--bg-0);
+}
+.pane--code {
+  grid-column: 1 / -1;
+}
+
+/* Builder locked while editing code */
+.pane--lockable {
+  position: relative;
+}
+.pane__lock {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px;
+  text-align: center;
+  background: rgba(17, 17, 19, 0.82);
+  backdrop-filter: blur(3px);
+  color: var(--fg-2);
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+.pane__lock strong {
+  color: var(--fg-1);
+  font-weight: 500;
+}
+
+/* ---------- Mobile pane switcher ---------- */
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 960px) {
+  :root {
+    --pane-l: 0px;
+    --pane-r: 0px;
+  }
+  .workspace {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+    position: relative;
+  }
+  .pane {
+    display: none;
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .pane--code {
+    grid-column: 1;
+  }
+  .workspace[data-mobile="sequence"] .pane--sequence,
+  .workspace[data-mobile="stage"] .pane--stage,
+  .workspace[data-mobile="inspect"] .pane--inspector,
+  .workspace[data-mobile="code"] .pane--code {
+    display: flex;
+  }
+  .workspace[data-mobile="code"] .pane--code {
+    height: auto !important;
+  }
+  .mobile-nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-top: 1px solid var(--line);
+    background: var(--bg-1);
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    gap: 4px;
+  }
+  .mobile-nav button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 6px 0;
+    border-radius: var(--r-s);
+    color: var(--fg-2);
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+  .mobile-nav button svg {
+    width: 16px;
+    height: 16px;
+  }
+  .mobile-nav button.is-active {
+    color: var(--accent);
+    background: var(--accent-soft);
+  }
+}

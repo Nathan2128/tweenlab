@@ -1,0 +1,26 @@
+.shortcuts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 22px 28px;
+  padding: 20px 24px 26px;
+}
+.shortcuts__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.shortcuts__group .eyebrow {
+  margin-bottom: 4px;
+}
+.shortcut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--fg-1);
+  font-size: 12.5px;
+}
+.shortcut__keys {
+  display: inline-flex;
+  gap: 3px;
+}

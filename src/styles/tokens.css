@@ -1,0 +1,52 @@
+:root {
+  color-scheme: dark;
+
+  --bg-0: #0b0b0c;
+  --bg-1: #111113;
+  --bg-2: #17171a;
+  --bg-3: #1d1d21;
+  --bg-4: #242429;
+  --bg-5: #2c2c32;
+
+  --line: #232327;
+  --line-strong: #303036;
+  --line-bright: #3d3d45;
+
+  --fg-0: #f3f1ec;
+  --fg-1: #b9b6ae;
+  --fg-2: #7f7c74;
+  --fg-3: #55534d;
+
+  --accent: #ffb020;
+  --accent-soft: rgba(255, 176, 32, 0.14);
+  --accent-line: rgba(255, 176, 32, 0.45);
+  --accent-ink: #1a1200;
+
+  --cyan: #62d2ff;
+  --cyan-soft: rgba(98, 210, 255, 0.14);
+  --mint: #7cf2a6;
+  --mint-soft: rgba(124, 242, 166, 0.14);
+  --coral: #ff6b5d;
+  --coral-soft: rgba(255, 107, 93, 0.14);
+
+  --font-ui: "Instrument Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-display: "Instrument Serif", "Times New Roman", Georgia, serif;
+  --font-mono: "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+
+  --r-xs: 4px;
+  --r-s: 6px;
+  --r-m: 10px;
+  --r-l: 14px;
+  --r-xl: 20px;
+
+  --shadow-1: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-2: 0 10px 30px -10px rgba(0, 0, 0, 0.7), 0 1px 0 rgba(255, 255, 255, 0.04) inset;
+  --shadow-pop: 0 24px 60px -20px rgba(0, 0, 0, 0.85), 0 0 0 1px var(--line-strong);
+
+  --topbar-h: 52px;
+  --pane-l: 276px;
+  --pane-r: 336px;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
