@@ -2,6 +2,8 @@
 
 **A GSAP playground.** Build and tune animations visually, scrub them on a DAW-style timeline, then copy production-ready code for vanilla JS, React, Vue or Svelte.
 
+**Live:** https://tweenlab.vercel.app
+
 > Built as a portfolio project. Everything the playground generates is plain [GSAP](https://gsap.com) with no runtime dependency on this tool.
 
 ## What it does
